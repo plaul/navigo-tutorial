@@ -5,7 +5,7 @@ import {
   adjustForMissingHash, loadTemplateFromDom,
 } from "./utils.js"
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
 
   const router = new Navigo("/", { hash: true });
   adjustForMissingHash()
@@ -16,6 +16,7 @@ window.addEventListener("load", () => {
       "/products": (match) => {
         renderText("<h1>TODO</h1>", "content")
       },
+      "/joke": () => renderText("Joke","content"),
       "/product/:id": (match) => {
         renderText(`Product ID: ${match.data.id}`, "content")
       },
